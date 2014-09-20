@@ -51,20 +51,21 @@ public class SearchingView extends View {
 	}
 	
 	public void initialize() {
-		if (bgBitmap == null) {
-			bgBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bg);
-			defaultStrokeWidth = getResources().getDimension(R.dimen.circle_width);
-			defaultRadius = getResources().getDimension(R.dimen.circle_radius);
-			defaultRadiusGap = getResources().getDimension(R.dimen.radius_gap);
-			defaultStrokeWidthGap = getResources().getDimension(R.dimen.stroke_gap);
-			defaultAlphaGap = 1;
-			configList = new LinkedList<CircleConfig>();
-		}
-		CircleConfig config = new CircleConfig(defaultRadius, defaultStrokeWidth, ALPHA_VALUE);
-		configList.addLast(config);
+		bgBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bg);
+		defaultStrokeWidth = getResources().getDimension(R.dimen.circle_width);
+		defaultRadius = getResources().getDimension(R.dimen.circle_radius);
+		defaultRadiusGap = getResources().getDimension(R.dimen.radius_gap);
+		defaultStrokeWidthGap = getResources().getDimension(R.dimen.stroke_gap);
+		defaultAlphaGap = 1;
+		configList = new LinkedList<CircleConfig>();
 	}
 	
 	public void startRunning() {
+		if (bgBitmap == null) {
+			initialize();
+		}
+		CircleConfig config = new CircleConfig(defaultRadius, defaultStrokeWidth, ALPHA_VALUE);
+		configList.addLast(config);
 		isRunning = true;
 		invalidate();
 	}
@@ -74,6 +75,8 @@ public class SearchingView extends View {
 		if (configList != null) {
 			configList.clear();
 		}
+		currentTimeOffset = 0;
+		previousTimeOffset = 0;
 	}
 	
 	private void drawMiddlePicture(Canvas canvas, int width, int height) {

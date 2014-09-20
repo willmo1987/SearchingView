@@ -2,5 +2,6 @@
 
     <string name="app_name">SearchingView</string>
     <string name="main_title">SearchingView</string>
+    <string name="start_title">Start</string>
 
 </resources>
