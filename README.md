@@ -6,4 +6,4 @@ In SNS application, sometimes we need to search someone in a public square or ne
 
 Screenshot
 ----------------
-![](https://github.com/willmo1987/SearchingView/res/raw/master/running_screenshot.png)  
+![](https://github.com/willmo1987/SearchingView/raw/master/running_screenshot.png)  
