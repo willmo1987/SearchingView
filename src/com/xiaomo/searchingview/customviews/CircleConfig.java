@@ -43,7 +43,7 @@ public class CircleConfig {
 		this.alphaValue = alphaValue;
 	}
 	
-	public void refreshConfig(float radiusGap, float strokeWidthGap, int alphaValueGap, float maxSize) {
+	public void refreshConfig(float radiusGap, float strokeWidthGap, float maxSize) {
 		radius += radiusGap;
 		if (radius > maxSize) {
 			isValid = false;

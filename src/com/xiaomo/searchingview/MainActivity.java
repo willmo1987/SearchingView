@@ -1,12 +1,12 @@
 package com.xiaomo.searchingview;
 
-import com.xiaomo.searchingview.customviews.SearchingView;
-
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+
+import com.xiaomo.searchingview.customviews.SearchingView;
 
 public class MainActivity extends ActionBarActivity implements OnClickListener {
 
