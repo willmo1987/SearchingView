@@ -4,7 +4,7 @@
     android:layout_height="match_parent" 
     android:background="@color/main_bg_color">
     <com.xiaomo.searchingview.customviews.SearchingView 
-        android:id="@+id/findView"
+        android:id="@+id/searchingView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
     <Button 

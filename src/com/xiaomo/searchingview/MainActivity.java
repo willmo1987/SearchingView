@@ -10,15 +10,15 @@ import com.xiaomo.searchingview.customviews.SearchingView;
 
 public class MainActivity extends ActionBarActivity implements OnClickListener {
 
-	private SearchingView findView;
+	private SearchingView searchingView;
 	private Button startButton;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		findView = (SearchingView) findViewById(R.id.findView);
-		findView.setOnClickListener(this);
+		searchingView = (SearchingView) findViewById(R.id.searchingView);
+		searchingView.setOnClickListener(this);
 		startButton = (Button) findViewById(R.id.startButton);
 		startButton.setOnClickListener(this);
 	}
@@ -26,14 +26,20 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == R.id.startButton) {
-			findView.initialize();
-			findView.startRunning();
+			searchingView.initialize();
+			searchingView.startRunning();
 			startButton.setVisibility(View.GONE);
 		}
 		else {
-			findView.stopRunning();
+			searchingView.stopRunning();
 			startButton.setVisibility(View.VISIBLE);
 		}
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		searchingView.destroy();
 	}
 	
 }

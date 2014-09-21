@@ -183,7 +183,22 @@ public class SearchingView extends View {
 			drawRandomHeart(canvas);
 			postInvalidateDelayed(TIME_INTERVAL);
 		}
-		
 	}
-
+	
+	public void destroy() {
+		isRunning = false;
+		if (configList != null) {
+			configList.clear();
+		}
+		if (logoBitmap != null) {
+			logoBitmap.recycle();
+		}
+		if (heartList != null) {
+			heartList.clear();
+		}
+		if (heartBitmap != null) {
+			heartBitmap.recycle();
+		}
+	}
+	
 }
