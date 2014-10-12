@@ -41,7 +41,6 @@ public class SearchingView extends View {
 	
 	public SearchingView(Context context) {
 		super(context);
-		
 	}
 	
 	public SearchingView(Context context, AttributeSet attrs) {
